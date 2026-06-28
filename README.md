@@ -274,7 +274,7 @@ value = clear_bit(value, position);
 
 ## 과제 4. C언어가 기계어가 되는 과정
 
-`hello_world.c`를 단계별로 컴파일해 각 중간 파일을 확인했다.
+`hello_world.c`를 단계별로 컴파일하여 C 언어가 실행 파일이 되는 과정을 확인하였다.
 
 ### 소스 코드 (hello_world.c)
 
@@ -297,6 +297,7 @@ int main() {
 | 링킹 | `gcc hello_world.o -o hello_world` | hello_world | 실행 파일 생성 |
 
 ### 실행 결과
+컴파일 과정을 통해 전처리, 컴파일, 어셈블, 링킹 단계를 거쳐 최종 실행 파일이 생성되는 것을 확인하였다.
 
 ### 파일 크기 비교
 
