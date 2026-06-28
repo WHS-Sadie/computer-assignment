@@ -46,6 +46,23 @@ char 타입은 저장할 수 있는 값의 범위가 -128부터 127까지이다.
 ### 코드 (char_underflow.c)
 
 ```c
+#include <stdio.h>
+#include <limits.h>
+
+int main() {
+    char value = CHAR_MIN;
+
+    printf("Original value: %d\n", value);
+
+    value = value - 1;
+
+    printf("Value after subtracting 1: %d\n", value);
+
+    return 0;
+}
+```
+
+```c
 char value = CHAR_MIN;
 ```
 
