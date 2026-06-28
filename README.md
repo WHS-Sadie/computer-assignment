@@ -46,19 +46,29 @@ char 타입은 저장할 수 있는 값의 범위가 -128부터 127까지이다.
 ### 코드 (char_underflow.c)
 
 ```c
-#include <stdio.h>
-#include <limits.h>
-
-int main() {
-    char value = CHAR_MIN;
-    printf("Original value: %d\n", value);
-    value = value - 1;
-    printf("Value after subtracting 1: %d\n", value);
-    return 0;
-}
+char value = CHAR_MIN;
 ```
 
-### 실행 결과
+- `CHAR_MIN`은 `char`형이 저장할 수 있는 **최솟값(-128)**을 의미한다.
+- 변수 `value`를 `-128`로 초기화한다.
+
+```c
+value = value - 1;
+```
+
+- `value`에서 1을 뺀다.
+- 원래 결과는 `-129`가 되어야 하지만, `char`형은 **-128 ~ 127**까지만 저장할 수 있다.
+- 따라서 저장 범위를 벗어나 **127로 변경되며 언더플로가 발생한다.**
+
+```c
+printf("Original value: %d\n", value);
+printf("Value after subtracting 1: %d\n", value);
+```
+
+- 첫 번째 `printf()`는 연산 전 값(-128)을 출력한다.
+- 두 번째 `printf()`는 언더플로가 발생한 후의 값(127)을 출력한다.
+
+## 실행 결과
 
 ### 설명
 
